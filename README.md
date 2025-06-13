@@ -1,87 +1,93 @@
-PDF Invoice Extractor
-This project provides a Python-based solution for extracting key information from PDF invoices, specifically designed to handle formats from Flipkart and Amazon. It parses details such as Order ID, Invoice Date, Total Amount, and itemized product lists, then saves this structured data into Excel files.
+# PDF Invoice Extractor
 
-Features
-PDF Text Extraction: Utilizes PyPDF2 to extract raw text from PDF documents.
+A Python-based solution for extracting key information from PDF invoices, specifically designed to handle formats from **Flipkart** and **Amazon**. This tool parses essential details like **Order ID**, **Invoice Date**, **Total Amount**, and **Itemized Product Lists**, and exports the structured data into **Excel (.xlsx)** files.
 
-Flipkart Invoice Parsing: Includes a dedicated parser for Flipkart invoice layouts, extracting order details and item specifics.
+---
 
-Amazon Invoice Parsing: Features a parser designed to handle Amazon invoice formats, extracting similar details.
+## 🔍 Features
 
-Excel Export: Saves the extracted and structured invoice data into .xlsx files for easy analysis and record-keeping.
+- **PDF Text Extraction**  
+  Uses `PyPDF2` to extract raw text from PDF documents.
 
-Modular Design: The project is structured into separate modules (pdf_reader.py, extract_flipkart.py, extract_amazon.py) for clarity and maintainability.
+- **Flipkart Invoice Parsing**  
+  Dedicated parser for Flipkart invoice layouts to extract relevant details.
 
-Project Structure
+- **Amazon Invoice Parsing**  
+  Tailored parsing logic to handle Amazon invoices with accuracy.
+
+- **Excel Export**  
+  Saves extracted data into `.xlsx` files for easy access and analysis.
+
+- **Modular Design**  
+  Clean architecture with separate modules for reading, parsing, and processing.
+
+---
+
+## 📁 Project Structure
+
+
+### Alternative View (YAML-style):
+```yaml
 .
-├── input_pdfs/
-│   └── (Your PDF invoice files go here)
-├── output_excel/
-│   └── (Extracted Excel files will be saved here)
-├── scripts/
-│   ├── main_extractor.py
-│   ├── pdf_reader.py
-│   ├── extract_flipkart.py
-│   └── extract_amazon.py
-├── README.md
-└── requirements.txt
+├── input_pdfs/             # Place your PDF invoice files here
+├── output_excel/           # Extracted Excel files will be saved here
+├── scripts/                # Source code and scripts
+│   ├── main_extractor.py       # Main script to run extraction
+│   ├── pdf_reader.py           # Module for reading PDF content
+│   ├── extract_flipkart.py     # Flipkart invoice parser
+│   └── extract_amazon.py       # Amazon invoice parser
+├── README.md               # This documentation file
+└── requirements.txt        # List of dependencies
 
-Setup and Installation
+
+**⚙️ Setup & Installation**
 Prerequisites
 Python 3.x
 
-pip (Python package installer)
+pip – Python package installer
 
 Installation Steps
-Clone the Repository (or create the project structure manually):
+Clone the Repository (or Set Up Manually)
+If cloning:
+git clone https://github.com/yourusername/pdf-invoice-extractor.git
+cd pdf-invoice-extractor
 
-If you're setting up a new project on your local machine, create the directory structure as shown above.
 
-Navigate to the Project Directory:
-
-cd path/to/your/project/Aaans Private limited project
-
-Create a Virtual Environment (Recommended):
-
-This helps manage dependencies and avoids conflicts with other Python projects.
-
+**Create a Virtual Environment (Recommended)**
 python -m venv venv
 
-Activate the Virtual Environment:
 
-On Windows:
-
+**Activate the Virtual Environment**
 .\venv\Scripts\activate
 
-On macOS/Linux:
 
-source venv/bin/activate
-
-Install Dependencies:
-
-Install the required Python packages using the requirements.txt file provided.
-
+**Install Dependencies**
 pip install -r requirements.txt
 
-Usage
-Place PDF Invoices: Put your Amazon and Flipkart PDF invoice files into the input_pdfs/ directory.
 
-Run the Extractor: Execute the main script from the project root directory.
+**🚀 Usage**
+Add PDF Invoices
+Place your Flipkart and Amazon invoice PDFs into the input_pdfs/ directory.
 
+Run the Extractor
+From the project root:
 python scripts/main_extractor.py
+Check the Output
+Extracted data will be saved in the output_excel/ directory as .xlsx files.
 
-View Output: The extracted data, organized into Excel files, will be saved in the output_excel/ directory. Each processed PDF will have its own corresponding Excel file.
 
-Troubleshooting
-PDF Read Errors: If you encounter errors like PyPDF2.errors.PdfReadError, the PDF might be encrypted or corrupted. Ensure the PDFs are not password-protected and are valid.
+**Troubleshooting**
+PDF Read Errors
+If you see PyPDF2.errors.PdfReadError, the PDF might be encrypted or invalid. Ensure it's not password-protected.
 
-No Data Parsed: If the script runs but no data is extracted, or the extracted data is incorrect, the PDF's layout might differ from the patterns defined in extract_flipkart.py or extract_amazon.py. You may need to inspect the raw extracted text (by adding print(raw_text) in main_extractor.py) and adjust the regular expressions in the respective parsing scripts.
+No Data Extracted
+The invoice format may differ. To debug, add print(raw_text) in main_extractor.py and adjust the regex patterns in extract_flipkart.py or extract_amazon.py.
 
-Module Not Found Errors: Ensure your virtual environment is activated and all dependencies are installed (pip install -r requirements.txt). Also, verify that pdf_reader.py, extract_flipkart.py, and extract_amazon.py are located within the scripts/ directory.
+Module Not Found Errors
 
-Contributing
-Feel free to fork this repository, open issues, and submit pull requests if you have improvements or encounter bugs.
-Module Not Found Errors: Ensure your virtual environment is activated and all dependencies are installed (pip install -r requirements.txt). Also, verify that pdf_reader.py, extract_flipkart.py, and extract_amazon.py are located within the scripts/ directory.
+Ensure the virtual environment is activated.
 
-Contributing
-Feel free to fork this repository, open issues, and submit pull requests if you have improvements or encounter bugs.
+Verify all required files are in the scripts/ directory.
+
+Check that dependencies are installed using:
+pip install -r requirements.txt
