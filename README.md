@@ -81,3 +81,7 @@ Module Not Found Errors: Ensure your virtual environment is activated and all de
 
 Contributing
 Feel free to fork this repository, open issues, and submit pull requests if you have improvements or encounter bugs.
+Module Not Found Errors: Ensure your virtual environment is activated and all dependencies are installed (pip install -r requirements.txt). Also, verify that pdf_reader.py, extract_flipkart.py, and extract_amazon.py are located within the scripts/ directory.
+
+Contributing
+Feel free to fork this repository, open issues, and submit pull requests if you have improvements or encounter bugs.
