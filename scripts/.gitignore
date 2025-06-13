@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+invoice_extractor_env/  # Your virtual environment folder name
+.venv/
+
+# IDEs and other common temporary files
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# Output directories
+output_excel/
+
+# PyPDF2 temporary files (if any are created)
+*.tmp
